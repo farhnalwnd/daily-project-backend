@@ -1,0 +1,28 @@
+
+/bin/
+/*.exe
+/*.dll
+/*.so
+
+
+/pkg/
+/tmp/
+
+/tmp
+
+# File environment variables 
+.env
+.env.*
+.secrets
+
+# File log atau error yang dihasilkan oleh aplikasi
+*.log
+
+# Cache editor
+.vscode/
+.sublime-workspace
+
+# Folder cache Go Module
+vendor/
+
+build-errors.log 
