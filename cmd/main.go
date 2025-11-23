@@ -21,17 +21,18 @@ func main() {
 		log.Fatalf("failed to initialize database: %v", err)
 	}
 
-	log.Println("mulai migrasi database")
-
 	err = db.AutoMigrate(
 		&domain.ActivityMaster{},
 		&domain.Activity{},
 		&domain.ResourceCategory{},
 		&domain.User{},
+		&domain.Account{},
+		&domain.Budgets{},
 	)
 
 	if err != nil {
 		log.Fatalf("Gagal menjalankan Gorm AutoMigrate: %v", err)
+	} else {
+		fmt.Println("Berhasil menjalankan Gorm AutoMigrate")
 	}
-	log.Println("Migrasi skema Gorm selesai!")
 }
